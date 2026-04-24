@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <style>
+      body {
+        margin: 2% 20%;
+        align-items: center;
+      }
+      .register-form {
+        background: lightcoral;
+        width: 800px;
+        padding: 30px 70px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 5px lightgray;
+      }
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+      form {
+        padding-bottom: 10px;
+      }
+      label {
+        width: 180px;
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 15px;
+      }
+      input,
+      select,
+      textarea {
+        width: 200px;
+        border-radius: 20px;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 5px;
+      }
+      button {
+        text-align: center;
+        border: none;
+        padding: 15px 35px;
+        border-radius: 20px;
+        margin-left: 110px;
+        font-size: 15px;
+        font-weight: bold;
+        background: rgb(224, 26, 26);
+        color: white;
+      }
+      button:hover {
+        background-color: rgb(15, 163, 42);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="register-form">
+        <h1>Student Registration Form</h1>
+        <form action="">
+          <label>Roll NO :</label><br />
+          <input
+            type="text"
+            name="roll no"
+            placeholder="Enter your Roll No..."
+            required
+            maxlength="10"
+          /><br /><br />
+          <label for="">Student Name :</label><br />
+          <input
+            type="text"
+            name="name"
+            placeholder="First Name..."
+            required
+          />+
+          <input
+            type="text"
+            name="name"
+            placeholder="Second Name..."
+          /><br /><br />
+
+          <label>Mobile No :</label><br />
+          <input
+            type="tel"
+            name="Mobile"
+            placeholder="Enter your Mobile No..."
+            required
+            maxlength="10"
+          /><br /><br />
+
+          <label for="">Email :</label><br />
+          <input
+            type="email"
+            name="email "
+            placeholder="Enter Your Email..."
+            required
+          /><br /><br />
+
+          <label for="">Password :</label><br />
+          <input
+            type="password"
+            name="psw"
+            placeholder="Enter your password..."
+            required
+          /><br /><br />
+
+          <label for="">Confirm Password :</label><br />
+          <input
+            type="password"
+            name="psw"
+            placeholder="Confirm your Password..."
+            required
+          /><br /><br />
+
+          <label for="">Date of Birth :</label><br />
+          <input type="date" name="dob" required /><br /><br />
+
+          <label>Gender :</label><br />
+          <input type="radio" name="gender" style="width: 100px" required />MALE
+          <input
+            type="radio"
+            name="gender"
+            style="width: 100px"
+            required
+          />FEMALE
+          <input
+            type="radio"
+            name="gender"
+            style="width: 100px"
+            required
+          />PEFER NO TO SAY<br /><br />
+
+          <label for="">Course :</label><br />
+          <select name="" id="">
+            <option>----Select Course-----</option>
+            <option value="">CSE</option>
+            <option value="">ECE</option>
+            <option value="">CIVIL</option>
+            <option value="">MECHANICAL</option>
+            <option value="">DATA SCIENCE</option>
+            <option value="">IOT</option></select
+          ><br /><br />
+
+          <label for="">Student Photo :</label><br />
+          <input type="file" name="photo" /><br /><br />
+          <label for="">Address :</label><br />
+          <textarea name="address" rows="5"></textarea>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
