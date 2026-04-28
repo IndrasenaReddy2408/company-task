@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arimo", sans-serif;
+      }
+      .header {
+        display: flex;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      .header img {
+        width: 300px;
+        height: 150px;
+        margin-left: 40px;
+      }
+      .nav-bar {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        margin-top: 60px;
+      }
+      nav a {
+        margin-left: 30px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+      .nav-bar a:hover {
+        color: #ffd700;
+      }
+      .container {
+        display: flex;
+        gap: 50px;
+        margin: 200px 40px 70px;
+      }
+      .box {
+        flex: 1;
+        border: 1px solid gray;
+        background-color: rgb(194, 223, 234);
+        position: relative;
+        padding-bottom: 20px;
+      }
+      .box img {
+        width: 100%;
+        height: 200px;
+      }
+      .img-box {
+        position: relative;
+      }
+
+      .badge {
+        position: absolute;
+        bottom: 0px;
+        right: 5px;
+        background: red;
+        color: white;
+        border-radius: 50%;
+        padding: 10px;
+        font-weight: bold;
+      }
+      .badge:hover {
+        background-color: orange;
+      }
+
+      .box h2 {
+        text-align: center;
+        font-size: 35px;
+        background: linear-gradient(to right, orangered, #c4a51b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 0;
+      }
+      .box p {
+        text-align: justify;
+        padding: 0 20px;
+        line-height: 1.3;
+        color: #1e3c72;
+      }
+      .btn {
+        position: fixed;
+        bottom: 30px;
+        right: 25px;
+        background: orangered;
+        color: white;
+        font-weight: bold;
+        border: none;
+        padding: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: orange;
+      }
+      .hidden-msg {
+        display: none;
+        color: red;
+        font-weight: bold;
+      }
+      .box:hover .hidden-msg {
+        display: block;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="header">
+        <div class="logo">
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/027/385/442/small/car-stainless-logo-png.png"
+            alt="logo"
+          />
+        </div>
+        <div class="nav-bar">
+          <nav>
+            <a href="#">HOME</a>
+            <a href="#">PRODUCTS</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">CAREERS</a>
+            <a href="#">CONTACT US</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="box">
+          <div class="img-box">
+            <img
+              src="https://www.stuttcars.com/wp-content/uploads/2021/05/porsche_918_spyder_2014-wallpaper-1920x1080.jpg"
+              alt="porsche"
+            />
+            <div class="badge">$1300</div>
+          </div>
+          <h2>PORSCHE</h2>
+          <p>
+            Porsche is a premier German luxury automobile manufacturer renowned
+            for high-performance sports cars, SUVs, and sedans. Headquartered in
+            Stuttgart, the company is a subsidiary of the Volkswagen Group. As
+            of April 2026, Porsche is actively expanding its electric vehicle
+            (EV) lineup while maintaining its heritage in internal combustion
+            engines top speed exceeding 350 km/h.
+          </p>
+          <p class="hidden-msg">New Models Coming Soon....</p>
+        </div>
+
+        <div class="box">
+          <div class="img-box">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7TdISbj-0URcQ09GRjcXkwzHGLF9xxqJPKg&s"
+              alt="lambo"
+            />
+            <div class="badge">$1500</div>
+          </div>
+          <h2>LAMBHORGANI</h2>
+          <p>
+            Bugatti is a French luxury automobile brand renowned for producing
+            some of the world's most powerful, fastest, and most expensive hyper
+            sports cars. Founded in 1909 by Ettore Bugatti in Molsheim, France,
+            the company is celebrated for its blend of artistic design and
+            engineering excellence.
+          </p>
+          <p class="hidden-msg">New Models Coming Soon.....</p>
+        </div>
+
+        <div class="box">
+          <div class="img-box">
+            <img
+              src="https://hips.hearstapps.com/hmg-prod/images/road060119fea-chiron-02-lede-1562011684.jpg?crop=1.00xw:0.846xh;0,0.154xh&resize=768:*"
+              alt="BUGHATI"
+            />
+            <div class="badge">$1700</div>
+          </div>
+          <h2>BUGHATI</h2>
+          <p>
+            Porsche is a premier German luxury automobile manufacturer renowned
+            for high-performance sports cars, SUVs, and sedans. Headquartered in
+            Stuttgart, the company is a subsidiary of the Volkswagen Group. As
+            of April 2026, Porsche is actively expanding its electric vehicle
+            (EV) lineup while maintaining its heritage in internal combustion
+            engines.
+          </p>
+          <p class="hidden-msg">New Models Coming Soon....</p>
+        </div>
+      </div>
+    </section>
+    <button class="btn">Help</button>
+  </body>
+</html>
