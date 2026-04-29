@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizon University</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: whitesmoke;
+      }
+
+      .header {
+        background-color: #003366;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+      .header h2 {
+        margin-left: 20px;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 18px;
+      }
+      .nav-bar {
+        margin-right: 20px;
+      }
+      #about-sec {
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5rem;
+      }
+      .about {
+        margin-top: 70px;
+        height: 70vh;
+        background:
+          linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
+          url(https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80)
+            center / cover;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+      .about h2 {
+        text-align: center;
+        font-size: 45px;
+        padding-top: 150px;
+      }
+      .about p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        text-align: center;
+        padding-left: 450px;
+      }
+      .about button {
+        margin-left: 700px;
+        background-color: #ffcc00;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      .about-awards-main {
+        display: flex;
+      }
+      .about-awards {
+        flex: 1;
+        color: #003366;
+        margin: 20px 50px;
+      }
+      .about-awards h2 {
+        font-size: 2.3rem;
+        text-align: center;
+      }
+
+      .about-awards p {
+        font-size: 16px;
+        text-align: center;
+      }
+      .featured-dept {
+        display: flex;
+        gap: 2rem;
+      }
+      .featured-h2 {
+        text-align: center;
+        color: #003366;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .featured-box {
+        width: 30%;
+        margin: 0 50px;
+        background-color: white;
+        border-radius: 15px;
+      }
+
+      .box1 {
+        border-radius: 15px;
+        height: 200px;
+        background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+      }
+      .box2 {
+        height: 200px;
+        border-radius: 15px;
+        background: linear-gradient(45deg, #4e65ff, #92effd);
+      }
+      .box3 {
+        border-radius: 15px;
+        height: 200px;
+        background: linear-gradient(45deg, #11998e, #38ef7d);
+      }
+
+      .box-content {
+        padding: 20px;
+      }
+      .box-content h3 {
+        color: #003366;
+        margin-bottom: 0.5rem;
+      }
+      .box-content p {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+      .box-content a {
+        color: #003366;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      footer {
+        background-color: #222;
+        color: #ccc;
+        padding: 4rem 5% 2rem;
+        margin-top: 5rem;
+        border-radius: 0 0 0 15px;
+      }
+      .footer-part {
+        display: flex;
+        gap: 70px;
+      }
+      .footer-content {
+        flex: 1;
+        width: 300px;
+      }
+      .footer-content h3 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+      .footer-content p,
+      a {
+        color: #cccccc;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+      }
+      .footer-para {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h2>Horizon University</h2>
+        <div class="nav-bar">
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Acadamics</a>
+            <a href="#">Admissions</a>
+            <a href="#">Campus Life</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="about-sec">
+      <div class="about">
+        <h2>Empowering Your Future</h2>
+        <p>
+          Discover a world-class education designed to innovate, inspire, and
+          elevate your career to the next level.
+        </p>
+        <button type="button">Apply Now</button>
+      </div>
+
+      <div class="about-awards-main">
+        <div class="about-awards">
+          <h2>50+</h2>
+          <p>Undergraduate Programs</p>
+        </div>
+
+        <div class="about-awards">
+          <h2>15:1</h2>
+          <p>Student-to-Faculty Ratio</p>
+        </div>
+
+        <div class="about-awards">
+          <h2>95%</h2>
+          <p>Graduate Employment</p>
+        </div>
+
+        <div class="about-awards">
+          <h2>120+</h2>
+          <p>Student Clubs & Organizations</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="featured-h2">Featured Departments</h2>
+      <div class="featured-dept">
+        <div class="featured-box">
+          <div class="box1"></div>
+          <div class="box-content">
+            <h3>College of Engineering</h3>
+            <p>
+              Build the future with our cutting-edge labs and
+              industry-experienced faculty. Programs in Mechanical, Civil, and
+              Computer Engineering.
+            </p>
+            <a href="#">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="featured-box">
+          <div class="box2"></div>
+          <div class="box-content">
+            <h3>School of Business</h3>
+            <p>
+              Develop leadership and entrepreneurial skills to thrive in the
+              global marketplace. AACSB-accredited programs.
+            </p>
+            <a href="#">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="featured-box">
+          <div class="box3"></div>
+          <div class="box-content">
+            <h3>Arts & Sciences</h3>
+            <p>
+              Explore your passions with diverse programs in Humanities,
+              Biological Sciences, and Digital Arts.
+            </p>
+            <a href="#">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-part">
+        <div class="footer-content">
+          <h3>Horizon University</h3>
+          <p>
+            123 University Blvd. Innovation City, ST 12345 Phone: (555) 123-4567
+          </p>
+        </div>
+
+        <div class="footer-content">
+          <h3>Quick Links</h3>
+          <a href="">About Us</a><br />
+          <a href="">Financial Aid</a><br />
+          <a href="">Student Portal</a><br />
+          <a href="">Alumni</a>
+        </div>
+
+        <div class="footer-content">
+          <h3>Resources</h3>
+          <a href="">Library</a><br />
+          <a href="">Campus Map</a><br />
+          <a href="">Career Center</a><br />
+          <a href="">Athletics</a><br />
+        </div>
+      </div>
+      <hr />
+      <p class="footer-para">© 2026 Horizon University. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
