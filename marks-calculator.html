@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h2 {
+        font-size: 32px;
+        text-align: center;
+        color: rgb(14, 172, 234);
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #box {
+        background: #b6e8fd;
+        border: none;
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      #box label {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      #box input {
+        width: 90%;
+        padding: 12px;
+        border: 2px solid #b6e8fd;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+      button {
+        font-size: 18px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+
+        background-color: rgb(224, 221, 41);
+      }
+      p {
+        font-size: 18px;
+        color: orangered;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Marks Calculator :</h2>
+    <div class="container">
+      <div id="box">
+        <label for="">Student Name :</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter Your Name..."
+          required
+        /><br />
+        <br />
+
+        <label for="">Subject 1 :</label>
+        <input
+          id="sub1"
+          type="number"
+          placeholder="Enter your telugu marks...."
+          required
+        /><br /><br />
+
+        <label for="">Subject 2 :</label>
+        <input
+          id="sub2"
+          type="number"
+          placeholder="Enter your english marks...."
+          required
+        /><br /><br />
+
+        <button onclick="checkResults()">See Marks</button>
+
+        <p id="demo"></p>
+      </div>
+    </div>
+
+    <script>
+      function checkResults() {
+        let name = document.getElementById("name").value;
+        let sub1 = Number(document.getElementById("sub1").value);
+        let sub2 = Number(document.getElementById("sub2").value);
+
+        let total_marks = sub1 + sub2;
+
+        let average = total_marks / 2;
+
+        let bonus_marks = total_marks + 5;
+
+        let check_equal = sub1 === sub2;
+
+        let marksandoperator = sub1 > 35 && sub2 > 35;
+
+        let marksoroperator = sub1 > 90 || sub2 > 90;
+
+        let sub1_increase = sub1;
+        sub1_increase++;
+
+        let sub2_decrement = sub2;
+        sub2_decrement--;
+
+        let result = average >= 35 ? "Pass" : "Fail";
+
+        let grade;
+
+        if (average >= 90) {
+          grade = "A Grade";
+        } else if (average >= 75) {
+          grade = "B Grade";
+        } else if (average >= 60) {
+          grade = "C Grade";
+        } else if (average >= 35) {
+          grade = "D Grade";
+        } else {
+          grade = "Fail";
+        }
+
+        document.getElementById("demo").innerHTML =
+          "Student Name is..." +
+          name +
+          "<br>" +
+          "Total Marks are..." +
+          total_marks +
+          "<br>" +
+          "Average marks" +
+          average +
+          "<br>" +
+          "Bonus marks after add Marks are..." +
+          bonus_marks +
+          "<br>" +
+          "Subject 1 and subject 2 marks are equal or not..." +
+          check_equal +
+          "<br>" +
+          " Both subjects marks are greater than 35 && Operator using ..." +
+          marksandoperator +
+          "<br>" +
+          "Any subject marks greater than 90 using || operator..." +
+          marksoroperator +
+          "<br>" +
+          " Subject 1 marks increasing +1 ..." +
+          sub1_increase +
+          "<br>" +
+          " Subject 2 marks decreasing -1 ..." +
+          sub2_decrement +
+          "<br>" +
+          " Student pass or fail ..." +
+          result +
+          "<br>" +
+          " Student grade ..." +
+          grade;
+      }
+    </script>
+  </body>
+</html>
