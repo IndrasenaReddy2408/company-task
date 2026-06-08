@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let hasId = Number(prompt("Enter pass Id")) === 100;
+      let entryPass = prompt("Enter you have pass yes or no") === "yes";
+      let age = Number(prompt("Give your age")) >= 18;
+
+      //Logical and operator
+      if (hasId && entryPass && age) {
+        console.log("You are welcome to pub");
+      } else {
+        console.log("Not eligible to pub");
+      }
+
+      //Logical or operator
+
+      if (hasId || entryPass || age) {
+        console.log("You are welcome to pub");
+      } else {
+        console.log("Not eligible to pub");
+      }
+    </script>
+
+    <script>
+      let isWeekend = prompt("Is it weekend? (yes/no)") === "yes";
+      let isHoliday = prompt("Is it Holiday? (yes/no)") === "yes";
+      let hasLeaveApproved = prompt("Is it Leave approved? (yes/no)") === "yes";
+
+      //Using logical or operator
+      if (isWeekend || isHoliday || hasLeaveApproved) {
+        console.log("No need to go to work");
+      } else {
+        console.log("Go to work");
+      }
+
+      //using logical and operator
+
+      if (isWeekend || isHoliday || hasLeaveApproved) {
+        console.log("No need to go to work");
+      } else {
+        console.log("Go to work");
+      }
+
+      // Using && and or oerator
+      if ((isWeekend || isHoliday) && hasLeaveApproved) {
+        console.log("No need to go to work");
+      } else {
+        console.log("Go to work");
+      }
+    </script>
+  </body>
+</html>
