@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Task 1: Student Attendance System
+
+      let students = ["Ravi", "Priya", "Kiran", "Anu"];
+
+      for (let i = 0; i < students.length; i++) {
+        document.write("Attendence Marked for ", students[i] + "<br>");
+      }
+
+      for (let student of students) {
+        document.write("Attendence Marked for ", student + "<br>");
+      }
+
+      //Task 2: Online Shopping Products
+
+      let products = ["Laptop", "Mouse", "Keyboard", "Monitor"];
+
+      let i = 0;
+
+      while (i < products.length) {
+        document.write("Available Product :", products[i] + "<br>");
+        i++;
+      }
+
+      //Task 3: Employee Welcome Messages
+
+      let employees = ["John", "David", "Sara"];
+
+      for (let employee of employees) {
+        document.write("Welcome ", employee + "<br>");
+      }
+
+      //Task 4: Movie Ticket Booking
+
+      for (i = 1; i <= 10; i++) {
+        document.write("Seat ", i + " booked " + "<br>");
+      }
+
+      let j = 1;
+      while (j <= 10) {
+        document.write("Seat ", j + " booked " + "<br>");
+        j++;
+      }
+
+      //Task 5: Food Delivery Orders
+
+      let orders = ["Order101", "Order102", "Order103"];
+
+      for (let i = 0; i < orders.length; i++) {
+        document.write("Delivering ", orders[i] + "<br>");
+      }
+
+      //Task 6: Mobile Contacts
+      let contacts = ["Rahul", "Priya", "Arjun", "Neha"];
+
+      let k = 0;
+
+      do {
+        document.write("Calling ", contacts[k] + "<br>");
+        k++;
+      } while (k <= contacts.length);
+
+      //Task 7: WhatsApp Broadcast
+      let users = ["Ravi", "Kiran", "Anu"];
+
+      let l = 0;
+      while (l < users.length) {
+        document.write("Message Sent to ", users[l] + "<br>");
+        l++;
+      }
+
+      //Task 8: YouTube Playlist
+
+      let videos = ["HTML Basics", "CSS Basics", "JavaScript Basics"];
+
+      let m = 0;
+
+      do {
+        document.write("Now Playing :", videos[m] + "<br>");
+        m++;
+      } while (m < videos.length);
+
+      //Task 9: ATM Withdrawal System
+
+      let balance = 1000;
+
+      while (balance >= 0) {
+        document.write("Balance : ", balance + "<br>");
+        balance -= 200;
+      }
+
+      //Task 10: Bus Journey Tracker
+
+      for (i = 1; i <= 5; i++) {
+        document.write("Reached Stop ", i + "<br>");
+      }
+
+      //Challenge Task 1: Student Result Processing
+
+      let studentsAll = ["Ravi", "Priya", "Kiran", "Anu"];
+
+      for (let student of studentsAll) {
+        document.write("Checking Results for ", student + "<br>");
+      }
+
+      document.write("All Results published Successfully" + "<br>");
+
+      //Challenge Task 2: Roll Number Classification
+
+      for (let i = 1; i <= 20; i++) {
+        if (i % 2 == 0) {
+          document.write("Student ", i + " Even Number" + "<br>");
+        } else {
+          document.write("Student ", i + " Odd Number" + "<br>");
+        }
+      }
+    </script>
+  </body>
+</html>
