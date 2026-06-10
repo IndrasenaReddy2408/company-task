@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const movies = [
+        { id: 1, title: "Bahubali", rating: 9 },
+        { id: 2, title: "Pushpa", rating: 8 },
+        { id: 3, title: "RRR", rating: 10 },
+        { id: 4, title: "Salaar", rating: 7 },
+      ];
+
+      //1
+      let titles = movies.map((movie) => movie.title);
+      console.log(titles);
+
+      //2
+      let ratings = movies.map((movie) => movie.rating);
+      console.log(ratings);
+
+      //3
+      let ratingSum = movies.map((movie) => movie.rating + 1);
+      console.log(ratingSum);
+
+      //4
+      let ratingGreater = movies.filter((movie) => movie.rating > 8);
+      console.log(ratingGreater);
+
+      //5
+      let ratingLess = movies.filter((movie) => movie.rating < 9);
+      console.log(ratingLess);
+
+      //6
+      let idFind = movies.find((movie) => movie.id === 3);
+      console.log(idFind);
+
+      //7
+      let titleFind = movies.find((movie) => movie.title === "Pushpa");
+      console.log(titleFind);
+
+      //8
+      let totalRating = movies.reduce((sum, movie) => sum + movie.rating, 0);
+      console.log(totalRating);
+
+      const products = [
+        { id: 1, name: "Laptop", price: 50000 },
+        { id: 2, name: "Mouse", price: 500 },
+        { id: 3, name: "Keyboard", price: 1500 },
+        { id: 4, name: "Monitor", price: 12000 },
+      ];
+
+      //9
+
+      let names = products.map((product) => product.name);
+      console.log(names);
+
+      //10
+      let prices = products.map((product) => product.price);
+      console.log(prices);
+
+      //11
+      let pricesIncrease = products.map((product) => product.price + 1000);
+      console.log(pricesIncrease);
+
+      //12
+      let pricesGreater = products.filter((product) => product.price > 1000);
+      console.log(pricesGreater);
+
+      //13
+      let pricesLess = products.filter((product) => product.price < 10000);
+      console.log(pricesLess);
+
+      //14
+      let findId = products.find((product) => product.id === 2);
+      console.log(findId);
+
+      //15
+      let findName = products.find((product) => product.name === "Monitor");
+      console.log(findName);
+
+      //16
+      let totalPrice = products.reduce(
+        (sum, product) => sum + product.price,
+        0,
+      );
+      console.log(totalPrice);
+
+      const scores = [45, 80, 20, 100, 60];
+
+      //17
+      let scoreAdd10 = scores.map((score) => score + 10);
+      console.log(scoreAdd10);
+
+      //18
+      let scoreAdd5 = scores.map((score) => score + 5);
+      console.log(scoreAdd5);
+
+      //19
+      let scoreGreater50 = scores.filter((score) => score >= 50);
+      console.log(scoreGreater50);
+
+      //20
+      let scoreGreater = scores.filter((score) => score >= 80);
+      console.log(scoreGreater);
+
+      //21
+      let scoreFirstGreater70 = scores.find((score) => score > 70);
+      console.log(scoreFirstGreater70);
+
+      //22
+      let scoreFirstEqual = scores.find((score) => score === 100);
+      console.log(scoreFirstEqual);
+
+      //23
+      let totalRuns = scores.reduce((total, score) => total + score, 0);
+      console.log(totalRuns);
+
+      //24
+      const totalRunsX = scores.reduce((total, score) => total + score, 0);
+      const average = totalRunsX / scores.length;
+
+      console.log(average);
+
+      const students = [
+        { name: "Ravi", marks: 90 },
+        { name: "Priya", marks: 75 },
+        { name: "Rahul", marks: 40 },
+        { name: "Anu", marks: 95 },
+      ];
+
+      //25
+      let studentNames = students.map((student) => student.name);
+      console.log(studentNames);
+
+      //26
+      let studentMarks = students.map((student) => student.marks);
+      console.log(studentMarks);
+
+      //27
+      let studentAdd = students.map((student) => student.marks + 5);
+      console.log(studentAdd);
+
+      //28
+      let scoredAbove80 = students.filter((student) => student.marks > 80);
+      console.log(scoredAbove80);
+
+      //29
+      let scoredBelow50 = students.filter((student) => student.marks < 50);
+      console.log(scoredBelow50);
+
+      //30
+      let nameFind = students.find((student) => student.name === "Rahul");
+      console.log(nameFind);
+
+      //31
+      let scoreFind = students.find((student) => student.marks > 80);
+      console.log(scoreFind);
+
+      //32
+      let totalMarks = students.reduce(
+        (sum, student) => sum + student.marks,
+        0,
+      );
+      console.log(totalMarks);
+
+      const foodOrders = [
+        { item: "Pizza", price: 300 },
+        { item: "Burger", price: 150 },
+        { item: "Biryani", price: 250 },
+        { item: "Ice Cream", price: 100 },
+      ];
+
+      //33
+      let items = foodOrders.map((food) => food.item);
+      console.log(items);
+
+      //34
+      let pricesX = foodOrders.map((food) => food.price);
+      console.log(pricesX);
+
+      //35
+      let pricesIncreaseX = foodOrders.map((food) => food.price + 50);
+      console.log(pricesIncreaseX);
+
+      //36
+      let pricesGreaterX = foodOrders.filter((food) => food.price > 200);
+      console.log(pricesGreaterX);
+
+      //37
+      let pricesLessX = foodOrders.filter((food) => food.price < 250);
+      console.log(pricesLessX);
+
+      //38
+      let itemFind = foodOrders.find((food) => food.item === "Biryani");
+      console.log(itemFind);
+
+      //39
+      let firstItemFind = foodOrders.find((food) => food.price > 250);
+      console.log(firstItemFind);
+
+      //40
+      let priceTotal = foodOrders.reduce(
+        (total, food) => total + food.price,
+        0,
+      );
+      console.log(priceTotal);
+
+      //   let studentsB = ["indra", "vinay", "thammu", "mahesh"];
+
+      //   studentsB["vinay"] = "bobby";
+      //   console.log(studentsB);
+
+      let movieNames = ["salaar", "from", "dark", "deathnote", "kalki"];
+
+      //41
+      for (let i = 0; i < movieNames.length; i++) {
+        movieNames[i] = movieNames[i].toUpperCase();
+      }
+      console.log(movieNames);
+
+      let productNames = ["bat", "mobile", "tv", "Fridge", "Washing Machine"];
+
+      //42
+      for (let i = 0; i < productNames.length; i++) {
+        productNames[i] = productNames[i].toUpperCase();
+      }
+      console.log(productNames);
+
+      //43
+      let studentNamesAll = ["sandeep", "mahesh", "suresh", "Devara", "Sunny"];
+
+      let sLetter = studentNamesAll.filter((student) =>
+        student.toLowerCase().startsWith("s"),
+      );
+      console.log(sLetter);
+
+      //44
+      let movieName = movieNames.filter((movie) => movie.length >= 5);
+      console.log(movieName);
+
+      //45
+      let combineTotal =
+        scores.reduce((sum, score) => sum + score, 0) +
+        students.reduce((sum, student) => sum + student.marks, 0);
+      console.log(combineTotal);
+
+      //   //46
+      //   max = products[0];
+
+      //   for (let i = 1; i < products.length; i++) {
+      //     if (products[i].price > max.price) {
+      //       max = products[i];
+      //     }
+      //   }
+      //   console.log("Most expensive product is...", max);
+
+      let expensiveProduct = products.reduce((max, product) =>
+        product.price > max.price ? product : max,
+      );
+
+      console.log(expensiveProduct);
+
+      //47
+      //   let highestCricketScore = scores[0];
+      //   for (let i = 1; i < scores.length; i++) {
+      //     if (scores[i] > highestCricketScore) {
+      //       highestCricketScore = scores[i];
+      //     }
+      //   }
+      //   console.log("Highest Cricket Score is...", highestCricketScore);
+
+      let highestScore = cricketScores.reduce((max, score) =>
+        score > max ? score : max,
+      );
+
+      console.log(highestScore);
+
+      //48
+      //   let studentHighestMarks = students[0];
+
+      //   for (let i = 1; i < students.length; i++) {
+      //     if (students[i].marks > studentHighestMarks.marks) {
+      //       studentHighestMarks = students[i];
+      //     }
+      //   }
+      //   console.log("Student Highest marks are...", studentHighestMarks);
+
+      let topStudent = students.reduce((max, student) =>
+        student.marks > max.marks ? student : max,
+      );
+
+      console.log(topStudent);
+
+      //49
+      //   let ratingHighest = movies[0];
+
+      //   for (let i = 1; i < movies.length; i++) {
+      //     if (movies[i].rating > ratingHighest.rating) {
+      //       ratingHighest = movies[i];
+      //     }
+      //   }
+      //   console.log("Highest Rating movie is...", ratingHighest);
+
+      let topMovie = movies.reduce((max, movie) =>
+        movie.rating > max.rating ? movie : max,
+      );
+
+      console.log(topMovie);
+    </script>
+  </body>
+</html>
