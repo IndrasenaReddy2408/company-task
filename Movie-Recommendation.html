@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let movies = [
+        {
+          id: 1,
+          title: "RRR",
+          genre: "Action",
+          year: 2022,
+          rating: 8.5,
+          language: "Telugu",
+        },
+        {
+          id: 2,
+          title: "Pushpa",
+          genre: "Action",
+          year: 2021,
+          rating: 7.8,
+          language: "Telugu",
+        },
+        {
+          id: 3,
+          title: "Baahubali",
+          genre: "Action",
+          year: 2015,
+          rating: 8.2,
+          language: "Telugu",
+        },
+        {
+          id: 4,
+          title: "Darling",
+          genre: "Love",
+          year: 2016,
+          rating: 8.4,
+          language: "Telugu",
+        },
+        {
+          id: 5,
+          title: "Salaar",
+          genre: "Action",
+          year: 2023,
+          rating: 7.9,
+          language: "Telugu",
+        },
+        {
+          id: 6,
+          title: "Interstellar",
+          genre: "Sci-Fi",
+          year: 2014,
+          rating: 8.7,
+          language: "English",
+        },
+        {
+          id: 7,
+          title: "Arjun Reddy",
+          genre: "Drama",
+          year: 2017,
+          rating: 8.1,
+          language: "Telugu",
+        },
+        {
+          id: 8,
+          title: "Jathi Ratnalu",
+          genre: "Comedy",
+          year: 2021,
+          rating: 7.6,
+          language: "Telugu",
+        },
+        {
+          id: 9,
+          title: "Dune",
+          genre: "Sci-Fi",
+          year: 2023,
+          rating: 9.1,
+          language: "English",
+        },
+        {
+          id: 10,
+          title: "Eega",
+          genre: "Fantasy",
+          year: 2012,
+          rating: 7.7,
+          language: "Telugu",
+        },
+      ];
+
+      //1. Display All Movies
+
+      for (let movie of movies) {
+        console.log("All Movies list are...", movie);
+      }
+
+      //2. Search Movie by Title
+      let searchMovie = prompt("Enter your move name...");
+
+      let movieSearch = movies.find(
+        (movie) => movie.title.toLowerCase() === searchMovie.toLowerCase(),
+      );
+      if (movieSearch) {
+        console.log("Movie Found:", movieSearch);
+      } else {
+        console.log("Movie Not Found");
+      }
+
+      //3. Display Movies by Genre
+      let movieGenre = prompt("Select which type of genre you want");
+
+      let genreList = movies.filter(
+        (movie) => movie.genre.toLowerCase() === movieGenre.toLowerCase(),
+      );
+      console.log("Your Selected genre movies are...", genreList);
+
+      //4. Display Movies by Language
+      let moviesLanguage = prompt("Enter which language movies list you want");
+
+      let languageMovie = movies.filter(
+        (movie) =>
+          movie.language.toLowerCase() === moviesLanguage.toLowerCase(),
+      );
+
+      console.log("Your selected language movie list is...", languageMovie);
+
+      //5. Find Highest Rated Movie
+      let highRated = movies.reduce((highest, movie) => {
+        return movie.rating > highest.rating ? movie : highest;
+      });
+
+      console.log(
+        "Highest rated movie is...",
+        highRated.title,
+        highRated.rating,
+      );
+
+      //6. Find Lowest Rated Movie
+      let lowRated = movies.reduce((lowest, movie) => {
+        return movie.rating < lowest.rating ? movie : lowest;
+      });
+
+      console.log("Lowest rated movie is...", lowRated.title, lowRated.rating);
+
+      //7. Display Movies Released After a Specific Year
+      let yearSelect = prompt(
+        "Enter Year to see which movies available from that year",
+      );
+      let selectYear = movies.filter((movie) => movie.year > yearSelect);
+      console.log("Movies released after ", yearSelect);
+      for (let movie of selectYear) {
+        console.log(movie.title);
+      }
+
+      //8. Display Movies with Rating Greater Than 8
+      let greatRating = movies.filter((movie) => movie.rating > 8);
+      console.log("Movies with Rating Greater Than 8 are...", greatRating);
+
+      //9. Count Movies by Genre
+      let genreCount = movies.reduce((count, movie) => {
+        count[movie.genre] = (count[movie.genre] || 0) + 1;
+        return count;
+      }, {});
+
+      for (let genre in genreCount) {
+        console.log(genre + " : " + genreCount[genre]);
+      }
+
+      //10. Sort Movies by Rating
+      let sortedMovies = movies.sort((a, b) => b.rating - a.rating);
+
+      console.log("Movies Sorted By Rating");
+
+      for (let movie of sortedMovies) {
+        console.log(movie.title + " - " + movie.rating);
+      }
+
+      //11. Sort Movies by Release Year
+      let sortedYears = movies.sort((a, b) => b.year - a.year);
+
+      console.log("Movies From Newest To Oldest");
+
+      for (let movie of sortedYears) {
+        console.log(movie.title + " - " + movie.year);
+      }
+
+      //12. Generate Movie Statistics Report
+      let totalMovies = movies.length;
+
+      let totalRating = movies.reduce((sum, movie) => sum + movie.rating, 0);
+
+      let averageRating = (totalRating / totalMovies).toFixed(1);
+
+      let actionMovies = movies.filter(
+        (movie) => movie.genre === "Action",
+      ).length;
+
+      let dramaMovies = movies.filter(
+        (movie) => movie.genre === "Drama",
+      ).length;
+
+      let comedyMovies = movies.filter(
+        (movie) => movie.genre === "Comedy",
+      ).length;
+
+      let sciFiMovies = movies.filter(
+        (movie) => movie.genre === "Sci-Fi",
+      ).length;
+
+      let languages = new Set();
+
+      for (let movie of movies) {
+        languages.add(movie.language);
+      }
+
+      console.log("MOVIE REPORT");
+      console.log("Total Movies :", totalMovies);
+      console.log("Highest Rated Movie :", highRated.title);
+      console.log("Lowest Rated Movie :", lowRated.title);
+      console.log("Average Rating :", averageRating);
+      console.log("Action Movies :", actionMovies);
+      console.log("Drama Movies :", dramaMovies);
+      console.log("Comedy Movies :", comedyMovies);
+      console.log("Sci-Fi Movies :", sciFiMovies);
+      console.log("Languages Available :", languages.size);
+
+      //Bonus 1
+
+      let top5Movies = movies.sort((a, b) => b.rating - a.rating).slice(0, 5);
+
+      console.log("Top 5 Highest Rated Movies");
+
+      top5Movies.forEach((movie) => {
+        console.log(movie.title + " - " + movie.rating);
+      });
+
+      //Bonus-2
+
+      let movieStarts = movies
+        .filter((movie) => movie.title.toLowerCase().startsWith("d"))
+        .map((movie) => movie.title);
+      console.log("Movies start with D are...", movieStarts);
+
+      //Bonus-3
+      let word = prompt("Enter a word on movie");
+
+      let moviesContainingWord = movies.filter((movie) =>
+        movie.title.toLowerCase().includes(word.toLowerCase()),
+      );
+
+      console.log("Movies Containing '" + word + "'");
+
+      moviesContainingWord.forEach((movie) => {
+        console.log(movie.title);
+      });
+
+      //Bonus - 4
+
+      let groupedMovies = movies.reduce((group, movie) => {
+        if (!group[movie.language]) {
+          group[movie.language] = [];
+        }
+
+        group[movie.language].push(movie.title);
+
+        return group;
+      }, {});
+
+      for (let language in groupedMovies) {
+        console.log(language + ":");
+
+        groupedMovies[language].forEach((title) => {
+          console.log("- " + title);
+        });
+      }
+
+      //Bonus - 5
+
+      let recommendMovie = movies.filter(
+        (movie) => movie.rating > 8 && movie.year > 2020,
+      );
+      console.log(recommendMovie);
+    </script>
+  </body>
+</html>
