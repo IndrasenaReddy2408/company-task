@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: #ececec;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        background: #17233b;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 32px;
+        margin-top: 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 4px;
+      }
+
+      .search-box {
+        flex: 1;
+        margin: 0 30px;
+      }
+
+      .search-box input {
+        width: 100%;
+        max-width: 600px;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+      }
+
+      .search-box i {
+        margin-left: -20px;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 22px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      /* MAIN LAYOUT */
+
+      .container {
+        max-width: 1200px;
+        margin: 35px auto;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 30px;
+        padding: 0 20px;
+      }
+
+      /* GALLERY */
+
+      .gallery {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-image {
+        background: white;
+        padding: 12px;
+        border-radius: 8px;
+      }
+
+      .main-image img {
+        width: 90%;
+        height: 500px;
+        display: block;
+        border-radius: 6px;
+      }
+
+      .thumbnails {
+        margin-top: 12px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .thumbnails img {
+        width: 85px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+        cursor: pointer;
+        background: white;
+        padding: 3px;
+        border: 1px solid #ddd;
+      }
+
+      .image-width img {
+        width: 125px;
+        height: 100px;
+      }
+
+      /* PRODUCT CARD */
+
+      .product-card {
+        background: #f8f8f8;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .product-card h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      .brand {
+        font-weight: 700;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .price {
+        font-size: 30px;
+        font-weight: bold;
+        color: #17233b;
+      }
+
+      .old-price {
+        color: #999;
+        text-decoration: line-through;
+      }
+
+      .discount {
+        color: #222;
+        font-weight: bold;
+      }
+
+      .description {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .rating {
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .quantity {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .quantity button {
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: #17233b;
+        color: white;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .quantity input {
+        width: 45px;
+        height: 36px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
+
+      .cart-btn {
+        width: 100%;
+        background: #17233b;
+        color: white;
+        border: none;
+        padding: 16px;
+        border-radius: 6px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-bottom: 25px;
+      }
+
+      .offer-box {
+        text-align: center;
+        background: #ededed;
+        padding: 24px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .offer-box h3 {
+        margin-bottom: 10px;
+      }
+
+      .offer-box p {
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .offer-box button {
+        background: #17233b;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timeless Watches</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <nav class="navbar">
+          <div class="logo">TIMELESS WATCHES</div>
+
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+          </div>
+
+          <ul class="nav-links">
+            <li><i class="fa-solid fa-magnifying-glass"></i></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <main class="container">
+          <section class="gallery">
+            <div class="main-image">
+              <img
+                src="https://m.media-amazon.com/images/I/71dG5BCp8JL._SX679_.jpg"
+                alt="Luxury Watch"
+              />
+            </div>
+
+            <div class="thumbnails">
+              <img
+                src="https://thewatchshop.in/cdn/shop/files/9947-Blk-A.jpg?v=1738318661"
+                alt=""
+              />
+              <img
+                src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw96b986ec/images/Titan/Catalog/1805QM04_1.jpg?sw=600&sh=600"
+                alt=""
+              />
+              <img
+                src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw96b986ec/images/Titan/Catalog/1805QM04_1.jpg?sw=600&sh=600"
+                alt=""
+              />
+              <img
+                src="https://m.media-amazon.com/images/I/61n0aVXta7L._AC_UY1000_.jpg"
+                alt=""
+                class="image-width"
+              />
+              <img
+                src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw051612ee/images/Titan/Catalog/1825KM03_1.jpg?sw=600&sh=600"
+                alt=""
+              />
+              <img
+                src="https://rameshwatch.com/cdn/shop/articles/Buy-Rado-Watches-in-India-Ramesh-Watch-Company_cf4ac7e1-11b8-4366-9aec-39fbccfd6ec5.jpg?v=1777547244"
+                alt=""
+                class="imge-width"
+              />
+            </div>
+          </section>
+
+          <section class="product-card">
+            <h1>Elegant Luxury Watch</h1>
+
+            <p class="brand">PRESTIGE TIME CO.</p>
+
+            <div class="price-row">
+              <span class="price">$499.99</span>
+              <span class="old-price">$799.99</span>
+              <span class="discount">38% OFF</span>
+            </div>
+
+            <p class="description">
+              This luxurious timepiece combines elegance with precision
+              craftsmanship. Perfect for formal occasions or everyday wear, it
+              features premium materials and impeccable design.
+            </p>
+
+            <div class="rating">
+              ⭐⭐⭐⭐⭐
+              <span>Rated 4.8/5 (256 reviews)</span>
+            </div>
+
+            <div class="quantity">
+              <button>-</button>
+              <input type="text" value="1" />
+              <button>+</button>
+            </div>
+
+            <button class="cart-btn">Add to Bag</button>
+
+            <div class="offer-box">
+              <h3>Limited-Time Offer!</h3>
+              <p>
+                Get an additional 10% off your first purchase when you sign up
+                for our newsletter.
+              </p>
+              <button>Sign Up Now</button>
+            </div>
+          </section>
+        </main>
+      </body>
+    </html>
+  </body>
+</html>
