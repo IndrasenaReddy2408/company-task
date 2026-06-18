@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="movie.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h1>Movie Booking :</h1>
+      <label>Enter Age</label><br />
+      <input type="number" id="age" placeholder="Enter age" /> <br /><br />
+
+      <label>Select Showtime</label><br />
+      <select id="showtime">
+        <option value="">-- Select Showtime --</option>
+        <option value="matinee">Matinee</option>
+        <option value="evening">Evening</option>
+      </select>
+      <br /><br />
+
+      <button onclick="calculateTicket()">Book Ticket</button>
+      <p id="result"></p>
+    </div>
+
+    <script src="movie-ticket.js"></script>
+  </body>
+</html>
