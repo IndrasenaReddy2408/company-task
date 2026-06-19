@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: url("https://images.ctfassets.net/h6goo9gw1hh6/2wFhCUJ584w0dmahdZnWik/52423d585f0302334a2cedd6882e1e9e/Made_from_scratch_1.jpg?w=1080&h=1920&fl=progressive&q=70&fm=jpg");
+        background-position: center;
+        object-fit: cover;
+        background-repeat: no-repeat;
+      }
+
+      .box {
+        background: linear-gradient(
+          135deg,
+          #ff9a8b 0%,
+          #ff6a88 55%,
+          #ffb199 100%
+        );
+        /* background: linear-gradient(135deg, #dee0ea, #7ebef6); */
+        /* background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2); */
+        /* background-color: #df94a5; */
+        backdrop-filter: (200px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+        /* box-shadow:
+          rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+          rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+          rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+          rgba(0, 0, 0, 0.06) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px,
+          rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px,
+          rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+      }
+
+      .box img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+
+      button {
+        width: 90%;
+        padding: 10px;
+        margin: 10px;
+        background-color: #53a2f7;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        border: none;
+        border-radius: 15px;
+        transition: 0.4s;
+      }
+      button:hover {
+        transform: translateY(-5px);
+      }
+
+      h2 {
+        margin-bottom: 0;
+        color: #ffffff;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      h3 {
+        font-size: 16px;
+        color: lightgray;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="./WhatsApp Image 2026-05-14 at 14.33.35.jpeg" alt="" />
+      <h2>Indrasena Reddy</h2>
+      <h3>@i__am__indra</h3>
+      <button id="colorChange" onclick="buttonChange()">Follow</button>
+    </div>
+
+    <script>
+      function buttonChange() {
+        document.getElementById("colorChange").style.backgroundColor =
+          "#26A049";
+        document.getElementById("colorChange").innerHTML = "Following";
+      }
+    </script>
+  </body>
+</html>
