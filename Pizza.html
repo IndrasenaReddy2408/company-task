@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Pizza Order Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: url("https://images.pexels.com/photos/29173086/pexels-photo-29173086.jpeg?_gl=1*1n5rvk8*_ga*MTE0MjQyMjAyNi4xNzc4ODI1MjI2*_ga_8JE65Q40S6*czE3ODI3MjM0NTckbzIzJGcxJHQxNzgyNzIzNTc4JGo1JGwwJGgw");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 30px;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        gap: 30px;
+      }
+
+      /* Left  */
+
+      .left {
+        flex: 2;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        border-radius: 12px;
+      }
+
+      .left h1 {
+        color: #e65100;
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #444;
+      }
+
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      .sizes {
+        display: flex;
+        gap: 15px;
+      }
+
+      .size {
+        width: 120px;
+        padding: 15px;
+        background: white;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+
+      .size:hover {
+        background: #ffe0b2;
+      }
+
+      .active {
+        background: #ff9800;
+        color: white;
+        border: none;
+      }
+
+      .toppings {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .toppings label {
+        background: #fafafa;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+      }
+
+      /* RIGHT */
+
+      .right {
+        flex: 1;
+      }
+
+      .right h1 {
+        margin-bottom: 20px;
+      }
+
+      .receipt {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        border-radius: 12px;
+      }
+
+      .receipt h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        margin: 18px 0;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 12px 0;
+        font-size: 17px;
+      }
+
+      .total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .total h1 {
+        color: #e65100;
+      }
+
+      #orderBtn {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+        background: #ff9800;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      #orderBtn:hover {
+        background: #e68900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Side -->
+      <div class="left">
+        <h1>🍕 BUILD YOUR SMART PIZZA</h1>
+
+        <!-- Crust -->
+        <label>CRUST</label>
+
+        <select id="crust">
+          <option value="8">Thin ($8)</option>
+          <option value="10">Regular ($10)</option>
+          <option value="12">Stuffed ($12)</option>
+        </select>
+
+        <!-- Size -->
+        <label>SIZE</label>
+
+        <div class="sizes">
+          <button class="size active" data-price="0">Small</button>
+          <button class="size" data-price="2">Medium</button>
+          <button class="size" data-price="4">Large</button>
+        </div>
+
+        <!-- Toppings -->
+        <label>TOPPINGS</label>
+
+        <div class="toppings">
+          <label>
+            <input type="checkbox" class="top" value="1" />
+            Cheese
+          </label>
+
+          <label>
+            <input type="checkbox" class="top" value="1.5" />
+            Mushrooms
+          </label>
+
+          <label>
+            <input type="checkbox" class="top" value="2" />
+            Pepperoni
+          </label>
+
+          <label>
+            <input type="checkbox" class="top" value="2" />
+            Chicken
+          </label>
+
+          <label>
+            <input type="checkbox" class="top" value="1" />
+            Peppers
+          </label>
+
+          <label>
+            <input type="checkbox" class="top" value="1.5" />
+            Olives
+          </label>
+        </div>
+
+        <!-- Coupon -->
+        <label>COUPON</label>
+
+        <input type="text" id="coupon" placeholder="Enter SAVE10" />
+      </div>
+
+      <!-- Right Side -->
+
+      <div class="right">
+        <h1>🧾 YOUR RECEIPT</h1>
+
+        <div class="receipt">
+          <h2 id="pizzaName">THIN CRUST PIZZA</h2>
+
+          <hr />
+
+          <div class="row">
+            <span>Base</span>
+            <span id="basePrice">$8.00</span>
+          </div>
+
+          <div class="row">
+            <span>Size</span>
+            <span id="sizePrice">$0.00</span>
+          </div>
+
+          <div class="row">
+            <span>Toppings</span>
+            <span id="topPrice">$0.00</span>
+          </div>
+
+          <div class="row">
+            <span>Subtotal</span>
+            <span id="subtotal">$8.00</span>
+          </div>
+
+          <div class="row">
+            <span>Discount</span>
+            <span id="discount">0%</span>
+          </div>
+
+          <hr />
+
+          <div class="total">
+            <h2>Total</h2>
+
+            <h1 id="total">$8.00</h1>
+          </div>
+        </div>
+
+        <button id="orderBtn">PLACE ORDER</button>
+      </div>
+    </div>
+
+    <script>
+      // Get HTML Elements
+
+      var crust = document.getElementById("crust");
+
+      var coupon = document.getElementById("coupon");
+
+      var pizzaName = document.getElementById("pizzaName");
+
+      var basePrice = document.getElementById("basePrice");
+      var sizePrice = document.getElementById("sizePrice");
+      var topPrice = document.getElementById("topPrice");
+      var subtotal = document.getElementById("subtotal");
+      var discount = document.getElementById("discount");
+      var total = document.getElementById("total");
+
+      var orderBtn = document.getElementById("orderBtn");
+
+      // Buttons
+      var sizeButtons = document.getElementsByClassName("size");
+
+      // Checkboxes
+      var toppings = document.getElementsByClassName("top");
+
+      // Prices
+      var crustCost = 8;
+      var sizeCost = 0;
+      var toppingCost = 0;
+
+      // Size Button Click
+
+      for (var i = 0; i < sizeButtons.length; i++) {
+        sizeButtons[i].addEventListener("click", changeSize);
+      }
+
+      function changeSize() {
+        for (var i = 0; i < sizeButtons.length; i++) {
+          sizeButtons[i].classList.remove("active");
+        }
+
+        this.classList.add("active");
+
+        sizeCost = Number(this.getAttribute("data-price"));
+
+        calculatePrice();
+      }
+
+      // Crust Change
+
+      crust.addEventListener("change", changeCrust);
+
+      function changeCrust() {
+        crustCost = Number(crust.value);
+
+        var name = crust.options[crust.selectedIndex].text;
+
+        pizzaName.innerHTML = name.toUpperCase() + " PIZZA";
+
+        calculatePrice();
+      }
+
+      // Toppings
+
+      for (var i = 0; i < toppings.length; i++) {
+        toppings[i].addEventListener("change", calculatePrice);
+      }
+
+      // Coupon
+
+      coupon.addEventListener("keyup", calculatePrice);
+
+      // Calculate Total
+
+      function calculatePrice() {
+        toppingCost = 0;
+
+        for (var i = 0; i < toppings.length; i++) {
+          if (toppings[i].checked) {
+            toppingCost = toppingCost + Number(toppings[i].value);
+          }
+        }
+
+        var sub = crustCost + sizeCost + toppingCost;
+
+        var finalPrice = sub;
+
+        if (coupon.value.toUpperCase() == "SAVE10") {
+          finalPrice = sub - (sub * 10) / 100;
+
+          discount.innerHTML = "10%";
+        } else {
+          discount.innerHTML = "0%";
+        }
+
+        basePrice.innerHTML = "$" + crustCost.toFixed(2);
+
+        sizePrice.innerHTML = "$" + sizeCost.toFixed(2);
+
+        topPrice.innerHTML = "$" + toppingCost.toFixed(2);
+
+        subtotal.innerHTML = "$" + sub.toFixed(2);
+
+        total.innerHTML = "$" + finalPrice.toFixed(2);
+      }
+
+      // Place Order
+
+      orderBtn.addEventListener("click", placeOrder);
+
+      function placeOrder() {
+        alert("🍕 Your pizza order has been placed!");
+      }
+
+      // First Time Load
+      calculatePrice();
+    </script>
+  </body>
+</html>
