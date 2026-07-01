@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Quiz</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- welcome screen  -->
+
+      <section id="welcomeScreen" class="card active">
+        <h1>Web Development Quiz</h1>
+
+        <p class="description">
+          Challenge yourself with 10 interesting JavaScript, HTML and CSS
+          questions.
+        </p>
+
+        <div class="info-box">
+          <div class="info">
+            <h3>Questions</h3>
+            <span>10</span>
+          </div>
+
+          <div class="info">
+            <h3>Difficulty</h3>
+            <span>Medium</span>
+          </div>
+
+          <div class="info">
+            <h3>Marks</h3>
+            <span>10</span>
+          </div>
+        </div>
+
+        <button id="startBtn" class="main-btn">Start Quiz →</button>
+      </section>
+
+      <!-- quiz screen  -->
+
+      <section id="quizScreen" class="card hidden">
+        <div class="top-bar">
+          <div id="progressText">Question 1 of 10</div>
+
+          <div id="timerDisplay">Time Left : 15s</div>
+        </div>
+
+        <!-- Progress Bar -->
+
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div>
+
+        <!-- Question -->
+
+        <h2 id="question">Question comes here...</h2>
+
+        <!-- Options -->
+
+        <div id="options" class="options">
+          <!-- JavaScript will create options -->
+        </div>
+
+        <!-- Navigation Buttons -->
+
+        <div class="buttons">
+          <button id="prevBtn" class="secondary-btn">← Previous</button>
+
+          <button id="nextBtn" class="main-btn">Next →</button>
+
+          <button id="submitBtn" class="submit-btn">Submit Quiz</button>
+        </div>
+      </section>
+
+      <!-- Result screen  -->
+
+      <section id="resultScreen" class="card hidden">
+        <h1>Quiz Completed!</h1>
+
+        <p id="performanceMessage">Excellent!</p>
+
+        <div class="result-grid">
+          <div class="result-card">
+            <h3>Total Questions</h3>
+            <span id="totalQuestions"></span>
+          </div>
+
+          <div class="result-card">
+            <h3>Correct</h3>
+            <span id="correctAnswers"></span>
+          </div>
+
+          <div class="result-card">
+            <h3>Wrong</h3>
+            <span id="wrongAnswers"></span>
+          </div>
+
+          <div class="result-card">
+            <h3>Score</h3>
+            <span id="finalScore"></span>
+          </div>
+
+          <div class="result-card full-width">
+            <h3>Percentage</h3>
+            <span id="percentage"></span>
+          </div>
+        </div>
+
+        <div class="high-score">
+          ⭐ Highest Score :
+          <span id="highScore">0</span>
+        </div>
+
+        <button id="restartBtn" class="main-btn">Restart Quiz</button>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
