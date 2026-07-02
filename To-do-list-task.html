@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Modern Todo List</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: url("https://plus.unsplash.com/premium_photo-1683309563562-aa3cfde9ed10?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 420px;
+        background: #bdc5a3;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        background-color: #e6e4e7;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #28b4e7;
+        color: white;
+        font-size: 17px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #3e77d1;
+      }
+
+      #title {
+        margin-top: 20px;
+        text-align: center;
+        color: #444;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .task {
+        background: #cba370;
+        margin-top: 12px;
+        padding: 12px 15px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      .close {
+        color: red;
+        font-size: 22px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .close:hover {
+        color: darkred;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Todo List</h2>
+
+      <input type="text" id="person" placeholder="Enter Person Name" />
+
+      <input type="text" id="todo" placeholder="Enter Todo Event" />
+
+      <button onclick="addTask()">Add Todo</button>
+
+      <div id="title"></div>
+
+      <div id="list"></div>
+    </div>
+
+    <script>
+      var tasks = [];
+
+      function addTask() {
+        var person = document.getElementById("person").value;
+        var todo = document.getElementById("todo").value;
+
+        if (person == "") {
+          alert("Enter Person Name");
+          return;
+        }
+
+        if (todo == "") {
+          alert("Enter Todo Event");
+          return;
+        }
+
+        tasks.push(todo);
+
+        document.getElementById("todo").value = "";
+
+        display(person);
+      }
+
+      function display(person) {
+        document.getElementById("title").innerHTML = person + "'s Todo List";
+
+        var output = "";
+
+        for (var i = 0; i < tasks.length; i++) {
+          output =
+            output +
+            "<div class='task'>" +
+            tasks[i] +
+            "<span class='close' onclick='removeTask(" +
+            i +
+            ")'>&times;</span>" +
+            "</div>";
+        }
+
+        document.getElementById("list").innerHTML = output;
+      }
+
+      function removeTask(index) {
+        tasks.splice(index, 1);
+
+        var person = document.getElementById("person").value;
+
+        display(person);
+      }
+
+      document
+        .getElementById("todo")
+        .addEventListener("keypress", function (event) {
+          if (event.key == "Enter") {
+            addTask();
+          }
+        });
+    </script>
+  </body>
+</html>

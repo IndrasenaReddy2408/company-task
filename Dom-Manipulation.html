@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .boxes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box {
+        background: #b6e8fd;
+        border: none;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxes">
+      <div class="box" id="box">
+        <h1 id="h1Font">Welcome to JavaScript..!</h1>
+        <p id="pChange">I am learning java script...</p>
+        <p id="date"></p>
+
+        <button id="colorChange1" onclick="changeFont()">Change h1 font</button>
+        <button id="colorChange2" onclick="changeSize()">Change p size</button>
+        <button id="colorChange3" onclick="changeBackground()">
+          change background
+        </button>
+        <button id="colorChange4" onclick="showDate()">Show Date</button>
+        <button id="colorChange" onclick="reset()">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      function changeFont() {
+        document.getElementById("h1Font").innerText =
+          "Java Script is used for Validations...!";
+        document.getElementById("h1Font").style.color = "rgb(249, 22, 22)";
+        document.getElementById("colorChange1").style.backgroundColor =
+          "#64B3FF";
+      }
+
+      function changeSize() {
+        document.getElementById("pChange").style.fontSize = "20px";
+        document.getElementById("colorChange2").style.backgroundColor =
+          "#64B3FF";
+      }
+      function changeBackground() {
+        const colors = ["#fbc04f", "#ff6b00", "#50cd89;", "#f1416c", "#7239ea"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById("box").style.backgroundColor = randomColor;
+        document.getElementById("colorChange3").style.backgroundColor =
+          "#64B3FF";
+      }
+
+      function showDate() {
+        document.getElementById("date").innerHTML =
+          "Current date and time: " + new Date();
+        document.getElementById("colorChange4").style.backgroundColor =
+          "#64B3FF";
+      }
+      function reset() {
+        document.getElementById("h1Font").innerText = "Change h1 font";
+        document.getElementById("h1Font").style.color = "black";
+        document.getElementById("pChange").style.fontSize = "16px";
+        document.getElementById("box").style.backgroundColor = "#B6E8FD";
+        document.getElementById("colorChange1").style.backgroundColor = "white";
+        document.getElementById("colorChange2").style.backgroundColor = "white";
+        document.getElementById("colorChange3").style.backgroundColor = "white";
+        document.getElementById("colorChange4").style.backgroundColor = "white";
+        document.getElementById("date").innerText = "";
+      }
+    </script>
+  </body>
+</html>
