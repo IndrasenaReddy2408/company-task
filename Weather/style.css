@@ -1,0 +1,254 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   BODY BACKGROUND
+========================= */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/072/440/051/small_2x/serene-mountain-stream-flowing-through-lush-green-valley-with-vibrant-wildflowers-and-towering-peaks-in-the-background-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  transition: 0.6s ease-in-out;
+  position: relative;
+}
+
+/* dark overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 22px;
+  padding: 22px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* TITLE */
+.weather-card h1 {
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.search-box input::placeholder {
+  color: #eee;
+}
+
+.search-box button {
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  background: #ff9800;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+}
+
+/* =========================
+   ERROR
+========================= */
+
+#error {
+  color: #ffeb3b;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   WEATHER INFO
+========================= */
+
+.weather-icon {
+  font-size: 70px;
+  margin-bottom: 5px;
+}
+
+#temperature {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+#cityName {
+  font-size: 24px;
+  color: #ffd54f;
+}
+
+#weatherDescription {
+  margin-top: 5px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+/* =========================
+   DETAILS BOX
+========================= */
+
+.details {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.detail-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.detail-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.detail-box i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.detail-box span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* =========================
+   LOCATION SECTION
+========================= */
+
+.location-section {
+  margin-top: 15px;
+  text-align: left;
+  position: absolute;
+  top: 200px;
+  right: 40px;
+}
+
+.location-section h3 {
+  color: #ff5252;
+  margin-bottom: 10px;
+}
+
+#locationText {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* MAP */
+#mapFrame {
+  width: 400px;
+  height: 250px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   WEATHER BACKGROUNDS
+========================= */
+
+.sunny {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+.cloudy {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+}
+
+.rainy {
+  background: linear-gradient(135deg, #373b44, #4286f4);
+}
+
+.snow {
+  background: linear-gradient(135deg, #e6dada, #274046);
+}
+
+.mist {
+  background: linear-gradient(135deg, #606c88, #3f4c6b);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.weather-card {
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Weather Card -->
+      <div class="weather-card">
+        <h1>🌦 Weather App</h1>
+
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="text" id="cityInput" placeholder="Enter City Name..." />
+
+          <button id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Error Message -->
+        <p id="error"></p>
+
+        <!-- Weather Information -->
+        <div class="weather-info">
+          <div class="weather-icon" id="weatherIcon">☀️</div>
+
+          <h2 id="temperature">--°C</h2>
+
+          <h3 id="cityName">City</h3>
+
+          <p id="weatherDescription">Weather Description</p>
+
+          <!-- Extra Details -->
+          <div class="details">
+            <div class="detail-box">
+              <i class="fa-solid fa-droplet"></i>
+              <p>Humidity</p>
+              <span id="humidity">--%</span>
+            </div>
+
+            <div class="detail-box">
+              <i class="fa-solid fa-wind"></i>
+              <p>Wind</p>
+              <span id="wind">-- km/h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="location-section">
+        <h3>
+          <i class="fa-solid fa-location-dot"></i>
+          Location
+        </h3>
+
+        <p id="locationText">Search a city...</p>
+
+        <iframe id="mapFrame" loading="lazy" allowfullscreen> </iframe>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
